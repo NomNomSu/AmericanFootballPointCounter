@@ -2,4 +2,6 @@
     <string name="app_name">American Football Point Counter</string>
     <string name="team_A_name">Team A Name</string>
     <string name="team_B_name">Team B Name</string>
+    <string name="team_A_score">0</string>
+    <string name="team_B_score">0</string>
 </resources>

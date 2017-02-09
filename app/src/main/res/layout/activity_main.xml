@@ -9,7 +9,7 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:orientation="vertical"
-    android:background="#3B8C2A"
+    android:background="@drawable/bg_repeater"
     tools:context="com.example.android.americanfootballpointcounter.MainActivity">
 
     <LinearLayout
@@ -31,26 +31,26 @@
                 android:layout_gravity="center"
                 android:gravity="center"
                 android:textAllCaps="true"
-                android:textSize="20dp"
+                android:textSize="@dimen/team_text_size"
                 android:textColor="@android:color/white"
                 android:id="@+id/teamAname"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="0"
+                android:text="@string/team_A_score"
                 android:layout_marginTop="@dimen/margin_custom_scores"
                 android:layout_marginBottom="@dimen/margin_custom_scores"
                 android:textColor="@android:color/white"
                 android:layout_gravity="center"
                 android:gravity="center"
-                android:textSize="60sp"
+                android:textSize="@dimen/score_text_size"
                 android:id="@+id/teamApoints"/>
 
             <Button
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="@dimen/button_height"
                 android:text="+6 points"
-                android:backgroundTint="@android:color/white"
+                android:background="@drawable/bc_button_colors"
                 android:layout_marginRight="@dimen/margin_custom_buttons"
                 android:layout_marginBottom="@dimen/margin_custom_buttons"
                 android:id="@+id/teamAPlusSix"
@@ -59,9 +59,9 @@
 
             <Button
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="@dimen/button_height"
                 android:text="+3 points"
-                android:backgroundTint="@android:color/white"
+                android:background="@drawable/bc_button_colors"
                 android:backgroundTintMode="src_in"
                 android:layout_marginRight="@dimen/margin_custom_buttons"
                 android:layout_marginBottom="@dimen/margin_custom_buttons"
@@ -69,18 +69,18 @@
 
             <Button
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="@dimen/button_height"
                 android:text="+2 points"
-                android:backgroundTint="@android:color/white"
+                android:background="@drawable/bc_button_colors"
                 android:layout_marginRight="@dimen/margin_custom_buttons"
                 android:layout_marginBottom="@dimen/margin_custom_buttons"
                 android:id="@+id/teamAPlusTwo"/>
 
             <Button
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="@dimen/button_height"
                 android:text="+1 points"
-                android:backgroundTint="@android:color/white"
+                android:background="@drawable/bc_button_colors"
                 android:layout_marginRight="@dimen/margin_custom_buttons"
                 android:layout_marginBottom="@dimen/margin_custom_buttons"
                 android:id="@+id/teamAPlusOne"/>
@@ -97,49 +97,51 @@
                 android:gravity="center"
                 android:layout_gravity="center"
                 android:textAllCaps="true"
-                android:textSize="20sp"
+                android:textSize="@dimen/team_text_size"
                 android:textColor="@android:color/white"
                 android:id="@+id/teamBname"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="0"
+                android:text="@string/team_B_score"
                 android:layout_gravity="center"
                 android:layout_marginTop="@dimen/margin_custom_scores"
                 android:layout_marginBottom="@dimen/margin_custom_scores"
                 android:gravity="center"
-                android:textSize="60sp"
+                android:textSize="@dimen/score_text_size"
                 android:textColor="@android:color/white"
                 android:id="@+id/teamBpoints"/>
+
             <Button
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="@dimen/button_height"
                 android:text="+6 points"
-                android:backgroundTint="@android:color/white"
+                android:background="@drawable/bc_button_colors"
                 android:layout_marginLeft="@dimen/margin_custom_buttons"
                 android:layout_marginBottom="@dimen/margin_custom_buttons"
                 android:id="@+id/teamBPlusSix"/>
+
             <Button
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="@dimen/button_height"
                 android:text="+3 points"
-                android:backgroundTint="@android:color/white"
+                android:background="@drawable/bc_button_colors"
                 android:layout_marginLeft="@dimen/margin_custom_buttons"
                 android:layout_marginBottom="@dimen/margin_custom_buttons"
                 android:id="@+id/teamBPlusThree"/>
             <Button
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="@dimen/button_height"
                 android:text="+2 points"
-                android:backgroundTint="@android:color/white"
+                android:background="@drawable/bc_button_colors"
                 android:layout_marginLeft="@dimen/margin_custom_buttons"
                 android:layout_marginBottom="@dimen/margin_custom_buttons"
                 android:id="@+id/teamBPlusTwo"/>
             <Button
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="@dimen/button_height"
                 android:text="+1 points"
-                android:backgroundTint="@android:color/white"
+                android:background="@drawable/bc_button_colors"
                 android:layout_marginLeft="@dimen/margin_custom_buttons"
                 android:layout_marginBottom="@dimen/margin_custom_buttons"
                 android:id="@+id/teamBPlusOne"/>
@@ -152,9 +154,9 @@
 
         <Button
             android:layout_width="match_parent"
-            android:layout_height="60dp"
+            android:layout_height="@dimen/button_height"
             android:text="Reset"
-            android:backgroundTint="@android:color/white"
+            android:background="@drawable/bc_button_colors"
             android:onClick="resetPoints"
             android:id="@+id/reset"/>
     </LinearLayout>
