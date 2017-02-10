@@ -76,7 +76,14 @@ public class MainActivity extends AppCompatActivity {
                     tAString.setText(tA.getText().toString());
                     tBString.setText(tB.getText().toString());
                     dialog.dismiss();
+                } else if (tA.getText().toString().isEmpty() && !tB.getText().toString().isEmpty()) {
+                    //something
+                    Toast.makeText(MainActivity.this, R.string.error_message, Toast.LENGTH_SHORT).show();
+                } else if (!tA.getText().toString().isEmpty() && tB.getText().toString().isEmpty()) {
+                    Toast.makeText(MainActivity.this, R.string.error_message, Toast.LENGTH_SHORT).show();
                 } else {
+                    tAString.setText(R.string.team_A_name);
+                    tBString.setText(R.string.team_B_name);
                     dialog.dismiss();
                 }
             }
