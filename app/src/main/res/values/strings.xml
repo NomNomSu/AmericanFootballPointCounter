@@ -1,7 +1,10 @@
 <resources>
     <string name="app_name">American Football Point Counter</string>
-    <string name="team_A_name">Team A Name</string>
-    <string name="team_B_name">Team B Name</string>
+    <string name="team_A_name">Team A</string>
+    <string name="team_B_name">Team B</string>
     <string name="team_A_score">0</string>
     <string name="team_B_score">0</string>
+    <string name="pop_up_a_info">Please provide A team name</string>
+    <string name="pop_up_b_info">Please provide B team name</string>
+    <string name="pop_button_text">Confirm</string>
 </resources>

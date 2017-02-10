@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="@dimen/pop_up_padding">
+    <TextView
+    android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+    android:layout_marginBottom="@dimen/pop_text_margin"
+        android:text="@string/pop_up_a_info"
+        android:textColor="@android:color/black"
+        android:textSize="@dimen/pop_text_size"
+    android:textStyle="bold"/>
+    <EditText
+        android:id="@+id/team_a_input"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Team A"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/pop_text_margin"
+        android:inputType="text"
+        android:text="@string/pop_up_b_info"
+        android:textColor="@android:color/black"
+        android:textSize="@dimen/pop_text_size"
+        android:textStyle="bold"/>
+    <EditText
+        android:id="@+id/team_b_input"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Team B"
+        android:inputType="text"/>
+    <Button
+        android:id="@+id/names_confirm"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/button_height"
+        android:layout_marginTop="30dp"
+        android:text="@string/pop_button_text"/>
+</LinearLayout>
