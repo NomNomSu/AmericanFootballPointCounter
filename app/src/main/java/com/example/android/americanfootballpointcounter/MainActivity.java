@@ -1,6 +1,5 @@
 package com.example.android.americanfootballpointcounter;
 
-import android.content.Intent;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -10,26 +9,15 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import static com.example.android.americanfootballpointcounter.R.id.teamAname;
-
 public class MainActivity extends AppCompatActivity {
 
     private int scoreTeamA;
     private int scoreTeamB;
-    private Button sixPointsA;
-    private Button threePointsA;
-    private Button twoPointsA;
-    private Button onePointA;
-    private Button sixPointsB;
-    private Button threePointsB;
-    private Button twoPointsB;
-    private Button onePointB;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        //startActivity(new Intent(MainActivity.this,PopUp.class));
         displayForTeamA(0);
         displayForTeamB(0);
 
@@ -39,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
         final EditText tA = (EditText) popView.findViewById(R.id.team_a_input);
         final EditText tB = (EditText) popView.findViewById(R.id.team_b_input);
         Button nC = (Button) popView.findViewById(R.id.names_confirm);
-        final TextView tAString = (TextView) findViewById(teamAname);
+        final TextView tAString = (TextView) findViewById(R.id.teamAname);
         final TextView tBString = (TextView) findViewById(R.id.teamBname);
 
 
@@ -165,20 +153,22 @@ public class MainActivity extends AppCompatActivity {
             }
         };
 
+        // Team A listeners allocation
         findViewById(R.id.teamAPlusSix).setOnClickListener(clickListener);
         findViewById(R.id.teamAPlusThree).setOnClickListener(clickListener);
         findViewById(R.id.teamAPlusTwo).setOnClickListener(clickListener);
         findViewById(R.id.teamAPlusOne).setOnClickListener(clickListener);
 
+        findViewById(R.id.teamAPlusSix).setOnLongClickListener(longListener);
+        findViewById(R.id.teamAPlusThree).setOnLongClickListener(longListener);
+        findViewById(R.id.teamAPlusTwo).setOnLongClickListener(longListener);
+        findViewById(R.id.teamAPlusOne).setOnLongClickListener(longListener);
+        // Team B listeners allocation
         findViewById(R.id.teamBPlusSix).setOnClickListener(clickListener);
         findViewById(R.id.teamBPlusThree).setOnClickListener(clickListener);
         findViewById(R.id.teamBPlusTwo).setOnClickListener(clickListener);
         findViewById(R.id.teamBPlusOne).setOnClickListener(clickListener);
 
-        findViewById(R.id.teamAPlusSix).setOnLongClickListener(longListener);
-        findViewById(R.id.teamAPlusThree).setOnLongClickListener(longListener);
-        findViewById(R.id.teamAPlusTwo).setOnLongClickListener(longListener);
-        findViewById(R.id.teamAPlusOne).setOnLongClickListener(longListener);
         findViewById(R.id.teamBPlusSix).setOnLongClickListener(longListener);
         findViewById(R.id.teamBPlusThree).setOnLongClickListener(longListener);
         findViewById(R.id.teamBPlusTwo).setOnLongClickListener(longListener);
@@ -195,7 +185,7 @@ public class MainActivity extends AppCompatActivity {
         scoreView.setText(String.valueOf(scoreTeamB));
     }
 
-    // Reset
+    // Resets score
     public void resetPoints(View vc) {
         scoreTeamA = 0;
         scoreTeamB = 0;
