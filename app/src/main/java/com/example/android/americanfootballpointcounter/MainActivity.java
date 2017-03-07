@@ -32,14 +32,15 @@ public class MainActivity extends AppCompatActivity {
         //startActivity(new Intent(MainActivity.this,PopUp.class));
         displayForTeamA(0);
         displayForTeamB(0);
-        sixPointsA = (Button) findViewById(R.id.teamAPlusSix);
-        threePointsA = (Button) findViewById(R.id.teamAPlusThree);
-        twoPointsA = (Button) findViewById(R.id.teamAPlusTwo);
-        onePointA = (Button) findViewById(R.id.teamAPlusOne);
-        sixPointsB = (Button) findViewById(R.id.teamBPlusSix);
-        threePointsB = (Button) findViewById(R.id.teamBPlusThree);
-        twoPointsB = (Button) findViewById(R.id.teamBPlusTwo);
-        onePointB = (Button) findViewById(R.id.teamBPlusOne);
+
+
+        //threePointsA = (Button) findViewById(R.id.teamAPlusThree);
+        //twoPointsA = (Button) findViewById(R.id.teamAPlusTwo);
+        //onePointA = (Button) findViewById(R.id.teamAPlusOne);
+        //sixPointsB = (Button) findViewById(R.id.teamBPlusSix);
+        //threePointsB = (Button) findViewById(R.id.teamBPlusThree);
+        //twoPointsB = (Button) findViewById(R.id.teamBPlusTwo);
+        //onePointB = (Button) findViewById(R.id.teamBPlusOne);
 
         // Pop up stuff
         AlertDialog.Builder popBuilder = new AlertDialog.Builder(MainActivity.this);
@@ -91,153 +92,106 @@ public class MainActivity extends AppCompatActivity {
         // End of Pop up stuff
 
         //Team A on click code
-        //add or remove six points
-        sixPointsA.setOnClickListener(new View.OnClickListener() {
+
+        final View.OnClickListener clickListener = new View.OnClickListener() {
             @Override
-            public void onClick(View va) {
-                scoreTeamA = scoreTeamA + 6;
-                displayForTeamA(scoreTeamA);
+            public void onClick(View v) {
+                switch(v.getId()) {
+                    case R.id.teamAPlusSix:
+                        scoreTeamA = scoreTeamA + 6;
+                        displayForTeamA(scoreTeamA);
+                        break;
+                    case R.id.teamAPlusThree:
+                        scoreTeamA = scoreTeamA + 3;
+                        displayForTeamA(scoreTeamA);
+                        break;
+                    case R.id.teamAPlusTwo:
+                        scoreTeamA = scoreTeamA + 2;
+                        displayForTeamA(scoreTeamA);
+                        break;
+                    case R.id.teamAPlusOne:
+                        scoreTeamA = scoreTeamA + 1;
+                        displayForTeamA(scoreTeamA);
+                        break;
+                    case R.id.teamBPlusSix:
+                        scoreTeamB = scoreTeamB +6;
+                        displayForTeamB(scoreTeamB);
+                        break;
+                    case R.id.teamBPlusThree:
+                        scoreTeamB = scoreTeamB + 3;
+                        displayForTeamB(scoreTeamB);
+                        break;
+                    case R.id.teamBPlusTwo:
+                        scoreTeamB = scoreTeamB + 2;
+                        displayForTeamB(scoreTeamB);
+                        break;
+                    case R.id.teamBPlusOne:
+                        scoreTeamB = scoreTeamB + 1;
+                        displayForTeamB(scoreTeamB);
+                        break;
+                }
             }
-        });
-        //add or remove three points
-        threePointsA.setOnClickListener(new View.OnClickListener() {
+        };
+
+        final View.OnLongClickListener longListener = new View.OnLongClickListener() {
             @Override
-            public void onClick(View va) {
-                scoreTeamA = scoreTeamA + 3;
-                displayForTeamA(scoreTeamA);
-            }
-        });
-        //add or remove two points
-        twoPointsA.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View va) {
-                scoreTeamA = scoreTeamA + 2;
-                displayForTeamA(scoreTeamA);
-            }
-        });
-        //add or remove one point
-        onePointA.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View va) {
-                scoreTeamA = scoreTeamA + 1;
-                displayForTeamA(scoreTeamA);
-            }
-        });
-        //Team A on long click code
-        sixPointsA.setOnLongClickListener(new View.OnLongClickListener() {
-            @Override
-            public boolean onLongClick(View va) {
-                if (scoreTeamA > 0) {
-                    scoreTeamA = scoreTeamA - 6;
-                    displayForTeamA(scoreTeamA);
+            public boolean onLongClick(View vl) {
+                switch(vl.getId()) {
+                    case R.id.teamAPlusSix:
+                        scoreTeamA = scoreTeamA - 6;
+                        displayForTeamA(scoreTeamA);
+                        break;
+                    case R.id.teamAPlusThree:
+                        scoreTeamA = scoreTeamA - 3;
+                        displayForTeamA(scoreTeamA);
+                        break;
+                    case R.id.teamAPlusTwo:
+                        scoreTeamA = scoreTeamA - 2;
+                        displayForTeamA(scoreTeamA);
+                        break;
+                    case R.id.teamAPlusOne:
+                        scoreTeamA = scoreTeamA - 1;
+                        displayForTeamA(scoreTeamA);
+                        break;
+                    case R.id.teamBPlusSix:
+                        scoreTeamB = scoreTeamB - 6;
+                        displayForTeamB(scoreTeamB);
+                        break;
+                    case R.id.teamBPlusThree:
+                        scoreTeamB = scoreTeamB - 3;
+                        displayForTeamB(scoreTeamB);
+                        break;
+                    case R.id.teamBPlusTwo:
+                        scoreTeamB = scoreTeamB - 2;
+                        displayForTeamB(scoreTeamB);
+                        break;
+                    case R.id.teamBPlusOne:
+                        scoreTeamB = scoreTeamB - 1;
+                        displayForTeamB(scoreTeamB);
+                        break;
                 }
                 return true;
             }
-        });
-        threePointsA.setOnLongClickListener(new View.OnLongClickListener() {
-            @Override
-            public boolean onLongClick(View va) {
-                if (scoreTeamA > 0) {
-                    scoreTeamA = scoreTeamA - 3;
-                    displayForTeamA(scoreTeamA);
-                }
-                return true;
-            }
-        });
-        twoPointsA.setOnLongClickListener(new View.OnLongClickListener() {
-            @Override
-            public boolean onLongClick(View va) {
-                if (scoreTeamA > 0) {
-                    scoreTeamA = scoreTeamA - 2;
-                    displayForTeamA(scoreTeamA);
-                }
-                return true;
-            }
-        });
-        onePointA.setOnLongClickListener(new View.OnLongClickListener() {
-            @Override
-            public boolean onLongClick(View va) {
-                if (scoreTeamA > 0) {
-                    scoreTeamA = scoreTeamA - 1;
-                    displayForTeamA(scoreTeamA);
-                }
-                return true;
-            }
-        });
-        //Team B  on click code
-        //add or remove six points
-        sixPointsB.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View vb) {
-                scoreTeamB = scoreTeamB + 6;
-                displayForTeamB(scoreTeamB);
-            }
-        });
-        //add or remove three points
-        threePointsB.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View vb) {
-                scoreTeamB = scoreTeamB + 3;
-                displayForTeamB(scoreTeamB);
-            }
-        });
-        //add or remove two points
-        twoPointsB.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View vb) {
-                scoreTeamB = scoreTeamB + 2;
-                displayForTeamB(scoreTeamB);
-            }
-        });
-        //add or remove one point
-        onePointB.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View vb) {
-                scoreTeamB = scoreTeamB + 1;
-                displayForTeamB(scoreTeamB);
-            }
-        });
-        //Team B on long click code
-        sixPointsB.setOnLongClickListener(new View.OnLongClickListener() {
-            @Override
-            public boolean onLongClick(View vb) {
-                if (scoreTeamB > 0) {
-                    scoreTeamB = scoreTeamB - 6;
-                    displayForTeamB(scoreTeamB);
-                }
-                return true;
-            }
-        });
-        threePointsB.setOnLongClickListener(new View.OnLongClickListener() {
-            @Override
-            public boolean onLongClick(View vb) {
-                if (scoreTeamB > 0) {
-                    scoreTeamB = scoreTeamB - 3;
-                    displayForTeamB(scoreTeamB);
-                }
-                return true;
-            }
-        });
-        twoPointsB.setOnLongClickListener(new View.OnLongClickListener() {
-            @Override
-            public boolean onLongClick(View vb) {
-                if (scoreTeamB > 0) {
-                    scoreTeamB = scoreTeamB - 2;
-                    displayForTeamB(scoreTeamB);
-                }
-                return true;
-            }
-        });
-        onePointB.setOnLongClickListener(new View.OnLongClickListener() {
-            @Override
-            public boolean onLongClick(View vb) {
-                if (scoreTeamB > 0) {
-                    scoreTeamB = scoreTeamB - 1;
-                    displayForTeamB(scoreTeamB);
-                }
-                return true;
-            }
-        });
+        };
+
+        findViewById(R.id.teamAPlusSix).setOnClickListener(clickListener);
+        findViewById(R.id.teamAPlusThree).setOnClickListener(clickListener);
+        findViewById(R.id.teamAPlusTwo).setOnClickListener(clickListener);
+        findViewById(R.id.teamAPlusOne).setOnClickListener(clickListener);
+
+        findViewById(R.id.teamBPlusSix).setOnClickListener(clickListener);
+        findViewById(R.id.teamBPlusThree).setOnClickListener(clickListener);
+        findViewById(R.id.teamBPlusTwo).setOnClickListener(clickListener);
+        findViewById(R.id.teamBPlusOne).setOnClickListener(clickListener);
+
+        findViewById(R.id.teamAPlusSix).setOnLongClickListener(longListener);
+        findViewById(R.id.teamAPlusThree).setOnLongClickListener(longListener);
+        findViewById(R.id.teamAPlusTwo).setOnLongClickListener(longListener);
+        findViewById(R.id.teamAPlusOne).setOnLongClickListener(longListener);
+                findViewById(R.id.teamBPlusSix).setOnLongClickListener(longListener);
+        findViewById(R.id.teamBPlusThree).setOnLongClickListener(longListener);
+        findViewById(R.id.teamBPlusTwo).setOnLongClickListener(longListener);
+        findViewById(R.id.teamBPlusOne).setOnLongClickListener(longListener);
     }
 
     public void displayForTeamA(int scoreTeamA) {
