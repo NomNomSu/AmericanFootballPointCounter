@@ -33,15 +33,6 @@ public class MainActivity extends AppCompatActivity {
         displayForTeamA(0);
         displayForTeamB(0);
 
-
-        //threePointsA = (Button) findViewById(R.id.teamAPlusThree);
-        //twoPointsA = (Button) findViewById(R.id.teamAPlusTwo);
-        //onePointA = (Button) findViewById(R.id.teamAPlusOne);
-        //sixPointsB = (Button) findViewById(R.id.teamBPlusSix);
-        //threePointsB = (Button) findViewById(R.id.teamBPlusThree);
-        //twoPointsB = (Button) findViewById(R.id.teamBPlusTwo);
-        //onePointB = (Button) findViewById(R.id.teamBPlusOne);
-
         // Pop up stuff
         AlertDialog.Builder popBuilder = new AlertDialog.Builder(MainActivity.this);
         View popView = getLayoutInflater().inflate(R.layout.pop_up, null);
@@ -96,7 +87,7 @@ public class MainActivity extends AppCompatActivity {
         final View.OnClickListener clickListener = new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                switch(v.getId()) {
+                switch (v.getId()) {
                     case R.id.teamAPlusSix:
                         scoreTeamA = scoreTeamA + 6;
                         displayForTeamA(scoreTeamA);
@@ -114,7 +105,7 @@ public class MainActivity extends AppCompatActivity {
                         displayForTeamA(scoreTeamA);
                         break;
                     case R.id.teamBPlusSix:
-                        scoreTeamB = scoreTeamB +6;
+                        scoreTeamB = scoreTeamB + 6;
                         displayForTeamB(scoreTeamB);
                         break;
                     case R.id.teamBPlusThree:
@@ -136,7 +127,7 @@ public class MainActivity extends AppCompatActivity {
         final View.OnLongClickListener longListener = new View.OnLongClickListener() {
             @Override
             public boolean onLongClick(View vl) {
-                switch(vl.getId()) {
+                switch (vl.getId()) {
                     case R.id.teamAPlusSix:
                         scoreTeamA = scoreTeamA - 6;
                         displayForTeamA(scoreTeamA);
@@ -188,7 +179,7 @@ public class MainActivity extends AppCompatActivity {
         findViewById(R.id.teamAPlusThree).setOnLongClickListener(longListener);
         findViewById(R.id.teamAPlusTwo).setOnLongClickListener(longListener);
         findViewById(R.id.teamAPlusOne).setOnLongClickListener(longListener);
-                findViewById(R.id.teamBPlusSix).setOnLongClickListener(longListener);
+        findViewById(R.id.teamBPlusSix).setOnLongClickListener(longListener);
         findViewById(R.id.teamBPlusThree).setOnLongClickListener(longListener);
         findViewById(R.id.teamBPlusTwo).setOnLongClickListener(longListener);
         findViewById(R.id.teamBPlusOne).setOnLongClickListener(longListener);
